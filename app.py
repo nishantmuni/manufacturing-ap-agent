@@ -17,10 +17,27 @@ from agent import run_deterministic_3way_match
 DB_NAME = "database.sqlite"
 PDF_DIR = "invoices_pdf"
 
-# Initialize database on cloud boot if file does not exist
-if not os.path.exists(DB_NAME):
-    init_db.init_db()
+def ensure_database():
+    """Verify tables exist; if missing or empty, build and seed them."""
+    needs_init = False
+    if not os.path.exists(DB_NAME):
+        needs_init = True
+    else:
+        try:
+            conn = sqlite3.connect(DB_NAME)
+            cursor = conn.cursor()
+            cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='purchase_orders'")
+            table_exists = cursor.fetchone()
+            conn.close()
+            if not table_exists:
+                needs_init = True
+        except Exception:
+            needs_init = True
 
+    if needs_init:
+        init_db.init_db()
+
+ensure_database()
 
 st.set_page_config(
     page_title="Manufacturing AP 3-Way Matching Engine",

@@ -13,8 +13,14 @@ import streamlit as st
 import init_db
 from agent import run_deterministic_3way_match
 
+
 DB_NAME = "database.sqlite"
 PDF_DIR = "invoices_pdf"
+
+# Initialize database on cloud boot if file does not exist
+if not os.path.exists(DB_NAME):
+    init_db.init_db()
+
 
 st.set_page_config(
     page_title="Manufacturing AP 3-Way Matching Engine",

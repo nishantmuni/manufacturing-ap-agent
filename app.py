@@ -192,16 +192,16 @@ with st.expander("🔍 Inspect Underlying ERP & Warehouse Ground Truth Data"):
             width="stretch"
         )
 
-with st.sidebar:
-    st.header("Enterprise Policy Rules")
-    st.markdown("""
-    * **Tolerance Ceiling:** $\le \$5.00$ cumulative variance auto-approved.
-    * **Split Receipts:** Cumulative summation across multiple dock deliveries ($\sum \text{GRNs}$).
-    * **Short Shipments:** Automatically held from payment batch.
-    * **Unauthorized Fees:** Any non-PO freight surcharges flagged for dispute.
-    """)
-    if st.button("🔄 Reset / Re-seed Database", width="stretch"):
-        init_db.init_db()
-        st.session_state.clear()  # <-- Clear in-memory audit cache so it re-reads cleanly
-        st.success("Database restored to baseline.")
-        st.rerun()
+#with st.sidebar:
+#   st.header("Enterprise Policy Rules")
+#    st.markdown("""
+#    * **Tolerance Ceiling:** $\le \$5.00$ cumulative variance auto-approved.
+#    * **Split Receipts:** Cumulative summation across multiple dock deliveries ($\sum \text{GRNs}$).
+#    * **Short Shipments:** Automatically held from payment batch.
+#    * **Unauthorized Fees:** Any non-PO freight surcharges flagged for dispute.
+#    """)
+#    if st.button("🔄 Reset / Re-seed Database", width="stretch"):
+#        init_db.init_db()
+#        st.session_state.clear()  # <-- Clear in-memory audit cache so it re-reads cleanly
+#        st.success("Database restored to baseline.")
+#        st.rerun()

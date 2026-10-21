@@ -30,5 +30,5 @@ Manufacturing AP departments manually process thousands of complex supplier invo
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/nishantmuni/manufacturing-ap-agent.git](https://github.com/nishantmuni/manufacturing-ap-agent.git)
+   git clone https://github.com/nishantmuni/manufacturing-ap-agent.git
    cd manufacturing-ap-agent

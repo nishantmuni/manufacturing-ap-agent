@@ -23,12 +23,20 @@ import tools
 # ==============================================================================
 
 load_dotenv()
-API_KEY = os.getenv("GEMINI_API_KEY")
 
-if not API_KEY:
-    raise ValueError("GEMINI_API_KEY is not defined in the environment or .env file.")
+_client = None
 
-client = genai.Client(api_key=API_KEY)
+def get_gemini_client():
+    """Lazily initializes the Gemini client only when live extraction is requested."""
+    global _client
+    if _client is None:
+        api_key = os.getenv("GEMINI_API_KEY")
+        if not api_key:
+            raise ValueError(
+                "GEMINI_API_KEY is not defined. Please set it in your environment or .env file to run live extraction."
+            )
+        _client = genai.Client(api_key=api_key)
+    return _client
 
 # Priority model sequence for automated fallback
 CASCADING_MODELS: List[str] = [
@@ -54,6 +62,7 @@ def execute_resilient_gemini_call(contents: List[Any], config: types.GenerateCon
     """
     last_error: Optional[Exception] = None
 
+    client = get_gemini_client()
     for model_name in CASCADING_MODELS:
         for attempt in range(1, 4):
             try:

@@ -1,0 +1,27 @@
+{
+  "invoice_id": "INV-9004",
+  "po_id": "PO-2001",
+  "vendor_name": "Apex Industrial Components",
+  "line_items": [
+    {
+      "line_number": 1,
+      "description": "Heavy Duty Widget Type HD",
+      "billed_qty": 100,
+      "billed_unit_price": 25.0,
+      "line_total": 2500.0
+    },
+    {
+      "line_number": 2,
+      "description": "Grade 8 Hex Bolts (Box of 1)",
+      "billed_qty": 300,
+      "billed_unit_price": 0.5,
+      "line_total": 150.0
+    }
+  ],
+  "freight_charges": 0.0,
+  "grand_total": 2650.0,
+  "semantic_line_mapping": {
+    "1": 1,
+    "2": 2
+  }
+}

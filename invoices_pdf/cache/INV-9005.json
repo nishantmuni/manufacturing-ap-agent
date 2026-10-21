@@ -1,0 +1,19 @@
+{
+  "invoice_id": "INV-9005",
+  "po_id": "PO-2001",
+  "vendor_name": "Apex Industrial Components",
+  "line_items": [
+    {
+      "line_number": 1,
+      "description": "2-Inch Industrial Flow Valve",
+      "billed_qty": 50,
+      "billed_unit_price": 80.0,
+      "line_total": 4000.0
+    }
+  ],
+  "freight_charges": 0.0,
+  "grand_total": 4000.0,
+  "semantic_line_mapping": {
+    "1": 3
+  }
+}

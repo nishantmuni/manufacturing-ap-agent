@@ -1,0 +1,19 @@
+{
+  "invoice_id": "INV-9002",
+  "po_id": "PO-1002",
+  "vendor_name": "Global Mfg Solutions",
+  "line_items": [
+    {
+      "line_number": 1,
+      "description": "Heavy Duty Industrial Grade Widget Type HD",
+      "billed_qty": 100,
+      "billed_unit_price": 25.02,
+      "line_total": 2502.0
+    }
+  ],
+  "freight_charges": 0.0,
+  "grand_total": 2502.0,
+  "semantic_line_mapping": {
+    "1": 1
+  }
+}

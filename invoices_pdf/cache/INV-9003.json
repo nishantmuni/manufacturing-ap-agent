@@ -1,0 +1,19 @@
+{
+  "invoice_id": "INV-9003",
+  "po_id": "PO-1003",
+  "vendor_name": "SteelWorks Foundry Ltd.",
+  "line_items": [
+    {
+      "line_number": 1,
+      "description": "5-Meter Reinforced Carbon Steel Bar",
+      "billed_qty": 200,
+      "billed_unit_price": 5.0,
+      "line_total": 1000.0
+    }
+  ],
+  "freight_charges": 150.0,
+  "grand_total": 1150.0,
+  "semantic_line_mapping": {
+    "1": 1
+  }
+}
